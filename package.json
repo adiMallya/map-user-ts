@@ -1,0 +1,21 @@
+{
+  "name": "map-me-ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "parcel watch index.html",
+    "start": "parcel index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@faker-js/faker": "^8.4.1",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "@types/google.maps": "^3.55.10"
+  }
+}
