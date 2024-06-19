@@ -1,7 +1,10 @@
 import { User } from "./User";
-import {Company} from "./Company";
-const user = new User();
-// console.log(user);
+import { Company } from "./Company";
+import { MyMap } from "./MyMap";
 
+const user = new User();
 const company = new Company();
-// console.log(company);
+const map = new MyMap("map");
+
+map.addMarker(user);
+map.addMarker(company);
