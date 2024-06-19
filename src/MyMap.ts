@@ -1,9 +1,9 @@
-interface Mappable {
+export interface Mappable {
   location: {
     lat: number;
     lng: number;
   };
-  name: string;
+  markerContent(): string;
 }
 
 export class MyMap {
@@ -27,13 +27,20 @@ export class MyMap {
     const { AdvancedMarkerElement } = (await google.maps.importLibrary(
       "marker"
     )) as google.maps.MarkerLibrary;
-    new AdvancedMarkerElement({
+    const marker = new AdvancedMarkerElement({
       map: this.googleMap,
       position: {
         lat: entity.location.lat,
         lng: entity.location.lng,
       },
-      title: entity.name,
+    });
+
+    marker.addListener("click", () => {
+      const inforWindow = new google.maps.InfoWindow({
+        content: entity.markerContent(),
+      });
+
+      inforWindow.open(this.googleMap, marker);
     });
   }
 }
