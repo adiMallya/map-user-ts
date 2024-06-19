@@ -4,3 +4,4 @@
 
 - Typescript
 - FakerJS
+- Google Maps API
